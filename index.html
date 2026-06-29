@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Política de Privacidad — Kumodemic</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a2238;
+    --ink-soft:#4b5468;
+    --bg:#faf9f6;
+    --paper:#ffffff;
+    --accent:#2742ad;
+    --accent-soft:#eef1fb;
+    --line:#e4e2db;
+    --good:#1f7a52;
+    --good-bg:#e9f6ef;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,Segoe UI,sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover, a:focus-visible{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  header.hero{
+    background:linear-gradient(135deg,#1a2238 0%,#2742ad 100%);
+    color:#fff;
+    padding:56px 24px 64px;
+    text-align:center;
+  }
+  header.hero .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:6px 14px;border-radius:999px;
+    font-size:13px;font-weight:600;letter-spacing:.02em;
+    margin-bottom:18px;
+  }
+  header.hero h1{
+    font-family:'Manrope',sans-serif;
+    font-weight:800;
+    font-size:clamp(28px,5vw,40px);
+    margin:0 0 10px;
+  }
+  header.hero p.sub{
+    margin:0;
+    font-size:15px;
+    color:rgba(255,255,255,.8);
+  }
+
+  main{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px 80px;
+  }
+
+  .summary{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:28px;
+    margin-top:-36px;
+    box-shadow:0 12px 30px -18px rgba(26,34,56,.25);
+  }
+  .summary h2{
+    font-family:'Manrope',sans-serif;
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--ink-soft);
+    margin:0 0 16px;
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+  }
+  .card{
+    background:var(--good-bg);
+    border:1px solid #cfe9da;
+    border-radius:12px;
+    padding:14px 14px 12px;
+  }
+  .card .ico{font-size:20px;}
+  .card strong{
+    display:block;
+    font-family:'Manrope',sans-serif;
+    font-size:14px;
+    color:var(--good);
+    margin:6px 0 4px;
+  }
+  .card span{font-size:12.5px;color:var(--ink-soft);}
+
+  nav.toc{
+    margin:36px 0 8px;
+    padding:18px 22px;
+    background:var(--accent-soft);
+    border-radius:12px;
+    font-size:14px;
+  }
+  nav.toc strong{display:block;margin-bottom:8px;font-family:'Manrope',sans-serif;}
+  nav.toc ol{margin:0;padding-left:18px;columns:2;column-gap:24px;}
+  nav.toc li{margin-bottom:6px;}
+
+  section{
+    margin-top:48px;
+    scroll-margin-top:24px;
+  }
+  section h2{
+    font-family:'Manrope',sans-serif;
+    font-size:21px;
+    font-weight:800;
+    color:var(--ink);
+    margin:0 0 4px;
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+  }
+  section h2 .num{
+    color:var(--accent);
+    font-size:15px;
+    font-weight:700;
+  }
+  section h3{
+    font-family:'Manrope',sans-serif;
+    font-size:15.5px;
+    font-weight:700;
+    margin:22px 0 8px;
+  }
+  section p{margin:10px 0;color:var(--ink-soft);}
+  section ul{margin:10px 0;padding-left:20px;color:var(--ink-soft);}
+  section li{margin-bottom:6px;}
+  section li strong{color:var(--ink);}
+
+  hr.div{border:none;border-top:1px solid var(--line);margin:48px 0 0;}
+
+  .callout{
+    background:#fff8e8;
+    border:1px solid #f1e0ad;
+    border-radius:12px;
+    padding:16px 18px;
+    margin:18px 0;
+    font-size:14.5px;
+    color:#6b5314;
+  }
+  .callout strong{color:#4a3a0c;}
+
+  .lockbox{
+    border:1px solid var(--line);
+    background:var(--paper);
+    border-radius:14px;
+    padding:20px 22px;
+    margin:18px 0;
+  }
+  .lockbox .flow{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    font-size:13.5px;color:var(--ink-soft);margin-top:10px;
+  }
+  .flow .step{
+    display:flex;align-items:center;gap:6px;
+    background:var(--accent-soft);
+    border-radius:8px;padding:6px 10px;font-weight:600;color:var(--accent);
+  }
+  .flow .arrow{color:#b9bdc9;font-size:16px;}
+  .flow .blocked{
+    background:#fdeceb;color:#b3261e;border-radius:8px;padding:6px 10px;font-weight:600;
+    text-decoration:line-through;
+  }
+
+  table.perm{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px;}
+  table.perm th, table.perm td{
+    text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);
+    vertical-align:top;
+  }
+  table.perm th{color:var(--ink-soft);font-weight:600;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em;}
+
+  .placeholder{
+    background:#fdeceb;color:#b3261e;border-radius:6px;padding:2px 8px;font-weight:600;font-size:13px;
+  }
+
+  footer{
+    text-align:center;
+    padding:36px 24px 60px;
+    color:var(--ink-soft);
+    font-size:13px;
+  }
+
+  @media (max-width:600px){
+    .cards{grid-template-columns:1fr;}
+    nav.toc ol{columns:1;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="badge">📘 Documento legal · com.kumodemic.pasedelista</span>
+  <h1>Política de Privacidad de Kumodemic</h1>
+  <p class="sub">Última actualización: 28 de junio de 2026</p>
+</header>
+
+<main>
+
+  <div class="summary">
+    <h2>Resumen rápido</h2>
+    <div class="cards">
+      <div class="card">
+        <span class="ico">📱</span>
+        <strong>100% local</strong>
+        <span>Todos tus grupos, alumnos, asistencias y calificaciones se guardan solo en tu teléfono.</span>
+      </div>
+      <div class="card">
+        <span class="ico">🚫☁️</span>
+        <strong>Sin servidores propios</strong>
+        <span>Kumodemic no tiene un servidor que reciba, almacene o procese tu información.</span>
+      </div>
+      <div class="card">
+        <span class="ico">🔗</span>
+        <strong>Comunidad (PRO)</strong>
+        <span>Si activas Comunidad, tu app habla directo con Google. Kumodemic no ve ni guarda tus credenciales.</span>
+      </div>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <strong>Contenido</strong>
+    <ol>
+      <li><a href="#responsable">Quién es responsable de esta app</a></li>
+      <li><a href="#que-info">Qué información gestiona Kumodemic</a></li>
+      <li><a href="#respaldos">Respaldos, CSV y horarios</a></li>
+      <li><a href="#compras">Compras y versión Pro</a></li>
+      <li><a href="#comunidad">Sección Comunidad y Google</a></li>
+      <li><a href="#permisos">Permisos que solicita la app</a></li>
+      <li><a href="#terceros">Compartición con terceros</a></li>
+      <li><a href="#seguridad">Seguridad</a></li>
+      <li><a href="#menores">Privacidad de menores</a></li>
+      <li><a href="#derechos">Tus derechos y eliminación de datos</a></li>
+      <li><a href="#cambios">Cambios a esta política</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <section id="responsable">
+    <h2><span class="num">01</span> Quién es responsable de esta app</h2>
+    <p>
+      Kumodemic (paquete <code>com.kumodemic.pasedelista</code>) es una aplicación desarrollada y mantenida por
+      un desarrollador independiente, dirigida a profesores para gestionar grupos, asistencia, calificaciones,
+      horarios y agenda de clase.
+    </p>
+    <p>
+      Esta política describe qué información maneja la app, cómo se almacena y, en el caso de la sección
+      Comunidad (versión Pro), cómo se conecta con los servicios de Google.
+    </p>
+  </section>
+
+  <section id="que-info">
+    <h2><span class="num">02</span> Qué información gestiona Kumodemic</h2>
+    <p>
+      Kumodemic <strong>no recopila ni transmite información a ningún servidor</strong>. Toda la información que
+      capturas dentro de la app —nombres de grupos y alumnos, registros de asistencia, calificaciones, criterios
+      de evaluación, agenda de proyectos, horarios y preferencias de configuración— se guarda
+      <strong>exclusivamente en el almacenamiento local de tu propio dispositivo</strong>, usando el almacenamiento
+      privado de la aplicación en Android.
+    </p>
+    <p>
+      Esa información nunca sale de tu teléfono salvo que tú mismo decidas exportarla (ver siguiente sección) o
+      que actives voluntariamente la sección Comunidad para conectarte con tu cuenta de Google.
+    </p>
+    <div class="lockbox">
+      <strong>En otras palabras:</strong>
+      <div class="flow">
+        <span class="step">📲 Tu teléfono</span>
+        <span class="arrow">→</span>
+        <span class="step">🔒 Almacenamiento local</span>
+        <span class="arrow">→</span>
+        <span class="blocked">☁️ Servidor de Kumodemic</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="respaldos">
+    <h2><span class="num">03</span> Respaldos, importación de CSV y horarios</h2>
+    <p>Kumodemic incluye herramientas para que tú mismo administres tus datos:</p>
+    <ul>
+      <li><strong>Exportar / importar respaldo (JSON):</strong> genera un archivo con todos tus datos para que tú decidas dónde guardarlo (almacenamiento del dispositivo, una memoria externa, tu propia nube personal, etc.). Kumodemic no envía ese archivo a ningún servidor; el proceso ocurre completamente en tu dispositivo a través del selector de archivos del sistema.</li>
+      <li><strong>Importar lista de alumnos (CSV/TXT):</strong> el archivo que selecciones se procesa localmente para agregar nombres a un grupo. No se sube ni se comparte.</li>
+      <li><strong>Importar horario (PDF/JSON/TXT):</strong> la app analiza el archivo en tu dispositivo para extraer materias, días y horas. El archivo nunca se transmite fuera de tu teléfono.</li>
+    </ul>
+  </section>
+
+  <section id="compras">
+    <h2><span class="num">04</span> Compras dentro de la app y versión Pro</h2>
+    <p>
+      Kumodemic ofrece una compra única para desbloquear la versión Pro, procesada íntegramente a través de
+      <strong>Google Play Billing</strong>. Kumodemic no recibe, procesa ni almacena datos de tarjetas o métodos
+      de pago: esa información es manejada directamente por Google Play. La app únicamente recibe de Google una
+      confirmación de que la compra fue realizada, para activar las funciones Pro en tu dispositivo.
+    </p>
+  </section>
+
+  <section id="comunidad">
+    <h2><span class="num">05</span> Sección Comunidad y conexión con Google (versión Pro)</h2>
+    <p>
+      La sección <strong>Comunidad</strong>, disponible solo en la versión Pro, te permite ver y administrar
+      eventos de <strong>Google Calendar</strong> directamente desde la app. Para esto:
+    </p>
+    <ul>
+      <li>Kumodemic solicita tu autorización mediante el inicio de sesión oficial de Google (OAuth 2.0) para obtener acceso únicamente a tu Google Calendar.</li>
+      <li>Esa autorización se usa para que tu dispositivo se conecte <strong>directamente</strong> con los servidores de Google y muestre/edite tus calendarios y eventos dentro de la app.</li>
+      <li>Kumodemic <strong>no posee servidores propios</strong> en ese flujo: las credenciales y los tokens de acceso viajan únicamente entre tu dispositivo y Google, nunca pasan por infraestructura de Kumodemic.</li>
+      <li><strong>Kumodemic no lleva ningún registro (log)</strong> de tus credenciales de Google, de tus tokens de acceso, ni del contenido de tus calendarios o eventos. Esa información no se copia, no se analiza y no se almacena fuera de tu propio dispositivo y de tu cuenta de Google.</li>
+      <li>Puedes revocar el acceso de Kumodemic a tu cuenta de Google en cualquier momento desde la configuración de seguridad de tu cuenta de Google ("Aplicaciones con acceso a tu cuenta").</li>
+    </ul>
+    <div class="callout">
+      <strong>Cumplimiento con Google:</strong> el uso y la transferencia de información recibida de las APIs de
+      Google por parte de Kumodemic se rigen por la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, incluyendo sus
+      requisitos de <em>Limited Use</em>. En particular, Kumodemic no usa los datos de tu cuenta de Google para
+      publicidad, no los vende ni transfiere a terceros, y no los utiliza para entrenar modelos de inteligencia
+      artificial.<br><br>
+      <em>("Kumodemic's use and transfer of information received from Google APIs adheres to the Google API
+      Services User Data Policy, including the Limited Use requirements.")</em>
+    </div>
+  </section>
+
+  <section id="permisos">
+    <h2><span class="num">06</span> Permisos que solicita la app</h2>
+    <table class="perm">
+      <tr><th>Permiso</th><th>Para qué se usa</th></tr>
+      <tr>
+        <td>Internet</td>
+        <td>Únicamente para conectarse a Google (inicio de sesión y Calendar, solo en Comunidad/Pro) y para validar compras con Google Play Billing.</td>
+      </tr>
+      <tr>
+        <td>Almacenamiento / archivos</td>
+        <td>Para que elijas dónde guardar tus respaldos y desde dónde importar archivos CSV, PDF o de horario.</td>
+      </tr>
+      <tr>
+        <td>Facturación (Google Play Billing)</td>
+        <td>Para procesar la compra única de la versión Pro a través de Google Play.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section id="terceros">
+    <h2><span class="num">07</span> Compartición de datos con terceros</h2>
+    <p>
+      Kumodemic no vende, alquila ni comparte tu información con anunciantes, redes de publicidad ni empresas de
+      análisis de datos. La única comunicación con un tercero ocurre cuando tú decides activar voluntariamente:
+    </p>
+    <ul>
+      <li><strong>Google</strong> (inicio de sesión y Google Calendar, solo en la sección Comunidad de la versión Pro), y</li>
+      <li><strong>Google Play</strong> (para procesar la compra de la versión Pro).</li>
+    </ul>
+    <p>En ambos casos, la relación es directa entre tu dispositivo y Google; Kumodemic actúa solo como un cliente que utiliza esas APIs y no intermedia ni registra esa información.</p>
+  </section>
+
+  <section id="seguridad">
+    <h2><span class="num">08</span> Seguridad</h2>
+    <p>
+      Dado que la información de la app se almacena localmente en tu dispositivo, su seguridad depende
+      principalmente de las protecciones propias de tu teléfono (bloqueo de pantalla, cifrado del sistema
+      operativo, etc.). Te recomendamos mantener tu dispositivo protegido y actualizado, y guardar tus archivos de
+      respaldo en un lugar seguro si decides exportarlos.
+    </p>
+  </section>
+
+  <section id="menores">
+    <h2><span class="num">09</span> Privacidad de menores</h2>
+    <p>
+      Kumodemic está dirigida a profesores, no a niños. Es común que un profesor registre nombres de alumnos
+      (que pueden ser menores de edad) como parte del pase de lista y las calificaciones; esa información es
+      ingresada y controlada por el propio profesor y se almacena únicamente en su dispositivo, sin que Kumodemic
+      la recopile, transmita o almacene en ningún servidor.
+    </p>
+  </section>
+
+  <section id="derechos">
+    <h2><span class="num">10</span> Tus derechos y cómo eliminar tus datos</h2>
+    <p>Como toda tu información vive en tu propio dispositivo, tú tienes control total sobre ella:</p>
+    <ul>
+      <li><strong>Eliminar todo:</strong> desinstalar la app borra automáticamente todos los datos guardados localmente.</li>
+      <li><strong>Eliminar un grupo o alumno:</strong> puedes hacerlo en cualquier momento desde dentro de la app.</li>
+      <li><strong>Exportar tus datos:</strong> usa la función de respaldo para obtener una copia completa en un archivo JSON.</li>
+      <li><strong>Revocar el acceso a Google:</strong> desde la configuración de tu cuenta de Google, en la sección de aplicaciones con acceso autorizado.</li>
+    </ul>
+  </section>
+
+  <section id="cambios">
+    <h2><span class="num">11</span> Cambios a esta política</h2>
+    <p>
+      Si en el futuro se agregan funciones que cambien la forma en que se maneja la información (por ejemplo, una
+      nueva integración), esta política se actualizará y la fecha de "Última actualización" reflejará el cambio.
+      Te recomendamos revisarla periódicamente, especialmente antes de actualizar la app.
+    </p>
+  </section>
+
+  <section id="contacto">
+    <h2><span class="num">12</span> Contacto</h2>
+    <p>
+      Si tienes dudas sobre esta política de privacidad o sobre el manejo de datos en Kumodemic, puedes escribir a:
+    </p>
+    <p><a href="mailto:kumodemic@gmail.com">kumodemic@gmail.com</a></p>
+  </section>
+
+  <hr class="div">
+
+</main>
+
+<footer>
+  Kumodemic — Política de Privacidad · com.kumodemic.pasedelista
+</footer>
+
+</body>
+</html>
